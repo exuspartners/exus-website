@@ -74,6 +74,15 @@ a:focus {
 /*hide focus state on click*/
 a:focus:not(:focus-visible) {
   outline: none;
+}
+
+
+/*remove duplicate padding on dblock elements on mobile*/
+@media only screen and (max-width: 479px) {
+  .dblock__half > .block__padding {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }           
 
 
