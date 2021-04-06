@@ -1,0 +1,90 @@
+/*hover effects for markers*/
+img.leaflet-marker-icon.leaflet-zoom-animated.leaflet-interactive:hover {
+    width: 38px !important;
+    height: 67px !important;
+    left: -1px;
+    top: -3px;
+}
+/*popup*/
+.exus-popup {
+background-color: unset;
+}
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+background-color: #005b6c;
+}
+
+.exus-popup__content {
+}
+.exus-popup__head {
+padding: 8px;
+margin-bottom: 8px;
+text-transform: uppercase;
+letter-spacing: 0.1rem;
+color: white;
+font-size: 0.8rem;
+}
+.exus-popup__link {
+color: white !important;
+text-align: center;
+display:block;
+font-size: 0.8rem;
+}
+
+/*control styles*/
+.capControl.leaflet-control {
+  background-color: white;
+  padding: 8px;
+  /*border-radius: 8px;*/
+  min-width: 200px;
+  font-family: Montserrat, Lato, sans-serif;
+}
+.capControl__name {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  font-size: 0.8rem;
+  color: #005B6C;
+  padding: 4px;
+}
+.capControl__cap {
+  padding: 4px;
+  padding-bottom:12px;
+  color: #00ADCC;
+  font-size:1.8rem;
+  line-height: 2rem;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #00ADCC;
+}
+.capControl__capRow {
+  display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+	display: -ms-flexbox;  /* TWEENER - IE 10 */
+	display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+	display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 4px;
+}
+.capControl__capRow__type {
+ margin-right: 24px;
+ font-weight:500;
+ color: #005B6C;
+font-size: 0.8rem;
+
+}
+.capControl__capRow__value {
+  color: #00ADCC;
+  font-size: 0.8rem;
+
+}
+.capControl__btn {
+  background-color: #00ADCC;
+  color: white;
+  padding: 12px;
+  margin-top: 16px;
+  display: none;
+  font-size: 1rem;
+}
+.capControl__btn:hover {
+  background-color: #005B6C;
+  cursor: pointer;
+}

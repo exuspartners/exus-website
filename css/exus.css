@@ -1,0 +1,79 @@
+
+/* Styles for pagination element customization */
+/* classes that we can work with
+most important for styling:*/
+.fs-pagination li:not(.fs-pagination-page) {
+  display: none;
+}
+.fs-pagination a {
+  font-family: 'Montserrat', 'Lato', sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  border-radius: 24px !important;
+  padding: 12px 24px 12px 24px;
+  min-width: 200px;
+  min-height: 48px;
+  line-height: 40px;
+  border: none !important;
+  background-color: white;
+  text-align: center;
+  text-decoration: none !important;
+}
+
+.fs-pagination a:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.fs-pagination-page {
+  border: none !important;
+  display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;  /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+  align-items: center;
+}
+
+/*for pagination buttons on Insights page*/
+.js--pagination-container--light .fs-pagination a {
+  background-color: #00adcc !important;
+  color: white !important;
+}
+
+.fs-pagination-prev {
+
+}
+.fs-pagination-inactive {
+
+}
+.fs-pagination-active {
+
+}
+.fs-pagination-dots {
+
+}
+.fs-pagination-next {
+
+}
+
+
+/*Remove Finsweet animation on team members - this is causing a new stacking context which prevents team member 
+modals from appearing on top of later team member objects*/
+.team__tmember.team__tmember--all.fslib-fadeIn {
+  animation-name: none !important;
+}
+
+
+
+/*set custom focus states*/
+a:focus {
+  outline: none;
+  outline: #00adcc 1px solid;
+  text-decoration: underline;
+}
+/*hide focus state on click*/
+a:focus:not(:focus-visible) {
+  outline: none;
+}           
+
+
