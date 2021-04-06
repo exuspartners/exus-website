@@ -249,7 +249,7 @@ function finweetFilters(filterCount, paginationBool, filterNames) {
       var elementText = textElements[j].innerText;
       extElements[j].parentElement.parentElement.setAttribute('filter-by', elementText);
     }
-    
+
       //for... of does not work in IE
       /*for (element of textElements) {
       var elementText = element.innerText;
@@ -364,12 +364,12 @@ function runExusScripts() {
   };
 
     //if we're on the ESG page, run the tracker
-  if (window.location.href.match('environmental-social-and-governance')) {
+  /*if (window.location.href.match('environmental-social-and-governance')) {
     document.addEventListener('DOMContentLoaded', (event) => {
       setTimeout(() => { animateCapacityTracker(); }, 2000);
       
     })    
-  }
+  }*/
 
   updateCopyrightYear();
 
