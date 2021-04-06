@@ -113,11 +113,14 @@ function resizeDiags() {
 //custom code to convert text links in buttons to full buttons. See site guidance notes for more information.****
 
 //helper function to copy attributes from one node to another
-function copyAttrs(src, target) {
+//proper way, but doesn't work in IE11, boo.
+/*function copyAttrs(src, target) {
   for(let attr of src.attributes) {
     target.setAttribute(attr.name, attr.value);
   }
-}
+}*/
+//IE11 way
+//for (var attr = )
 
 function replaceButtons() {
 
