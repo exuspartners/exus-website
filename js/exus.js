@@ -114,13 +114,12 @@ function resizeDiags() {
 
 //helper function to copy attributes from one node to another
 //proper way, but doesn't work in IE11, boo.
-/*function copyAttrs(src, target) {
+function copyAttrs(src, target) {
   for(let attr of src.attributes) {
     target.setAttribute(attr.name, attr.value);
   }
-}*/
-//IE11 way
-//for (var attr = )
+}
+
 
 function replaceButtons() {
 
@@ -247,7 +246,7 @@ function finweetFilters(filterCount, paginationBool, filterNames) {
     var textElements = document.getElementsByClassName("js--filter-by-text--" + filterNames[i]);
     for (let j = 0; j < textElements.length; j++) {
       var elementText = textElements[j].innerText;
-      extElements[j].parentElement.parentElement.setAttribute('filter-by', elementText);
+      textElements[j].parentElement.parentElement.setAttribute('filter-by', elementText);
     }
 
       //for... of does not work in IE
@@ -347,7 +346,7 @@ function runExusScripts() {
 	  	hideEmptySections();
 	  }
 
-  //replaceButtons();
+  replaceButtons();
 
   resizeDiags();
   
@@ -364,12 +363,12 @@ function runExusScripts() {
   };
 
     //if we're on the ESG page, run the tracker
-  /*if (window.location.href.match('environmental-social-and-governance')) {
+  if (window.location.href.match('environmental-social-and-governance')) {
     document.addEventListener('DOMContentLoaded', (event) => {
       setTimeout(() => { animateCapacityTracker(); }, 2000);
       
     })    
-  }*/
+  }
 
   updateCopyrightYear();
 
