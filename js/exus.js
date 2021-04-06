@@ -245,10 +245,16 @@ function finweetFilters(filterCount, paginationBool, filterNames) {
   for (let i = 0; i < filterNames.length; i++) {
     //get the hidden tag text for each filter type
     var textElements = document.getElementsByClassName("js--filter-by-text--" + filterNames[i]);
-    for (element of textElements) {
+    for (let j = 0; j < textElements.length; j++) {
+      var elementText = textElements[j].innerText;
+      extElements[j].parentElement.parentElement.setAttribute('filter-by', elementText);
+    }
+    
+      //for... of does not work in IE
+      /*for (element of textElements) {
       var elementText = element.innerText;
       element.parentElement.parentElement.setAttribute('filter-by', elementText);
-    }
+    }*/
 
     //load filter details into an array we can pass to IIFE
     myFilters[i] = {};
