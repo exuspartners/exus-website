@@ -131,12 +131,17 @@ function replaceButtons() {
       var linkBlock = document.createElement('a'); //this is our new <a>
       var txtDiv = document.createElement('div'); //this is our new div to hold link text
       var href = txtLink.href; //our link destination. We store a reference since we're going to destroy the existing txtLink
-      txtDiv.innerHTML=txtLink.innerHTML; //first copy across contents and attrs for text link to div replacement
+      if(txtLink.target) {var target = txtLink.target;} //if link opens in new tab, store this attr value
+      var target txtDiv.innerHTML=txtLink.innerHTML; //first copy across contents and attrs for text link to div replacement
       copyAttrs(txtLink,txtDiv);
       txtLink.parentNode.replaceChild(txtDiv,txtLink); //replace text element
+      txtDiv.removeAttribute("href"); //remove href and target from new text div
+      if(target) {txtDiv.removeAttribute("target");}
       linkBlock.innerHTML = div.innerHTML; //copy across contents and attrs for div to link replacement - the inner HTML includes the new text div we've made
       copyAttrs(div,linkBlock);
       linkBlock.href = href; //set the link on the link block
+      if (target) {linkBlock.target = target;}
+
       linkBlock.classList.add("w-inline-block"); 
       /*this bugged me a while - without it the link element was breaking over multipe lines weirdly
       WF adds in this class to assign display:inline-block and max-width:100% to a block link, which obv our new <a> didn't have
