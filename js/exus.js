@@ -123,7 +123,7 @@ function copyAttrs(src, target) {
 
 function replaceButtons() {
 
-  var btnText = document.querySelectorAll('.button__text');
+  var btnText = document.querySelectorAll('.button__text'); 
   var counter = 0;
   for(let i = btnText.length-1; i > -1; i--) {
       var txtLink = btnText[i] //this is the text link we want to replace with a div with text in
