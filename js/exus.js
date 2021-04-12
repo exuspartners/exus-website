@@ -351,7 +351,7 @@ function runExusScripts() {
 	  	hideEmptySections();
 	  }
 
-  replaceButtons();
+  //replaceButtons();
 
   resizeDiags();
   
