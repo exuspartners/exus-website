@@ -347,7 +347,7 @@ function runExusScripts() {
   });
 
   //if we're not on the portfolio or ESG page, hide empty collections (since we need these collections for loading data)
-	if (!window.location.href.match('portfolio') && !window.location.href.match('environmental-social-and-governance')) {
+	if (!window.location.href.match('portfolio') && !window.location.href.match('environmental-social-and-governance') && !window.location.href.match('careers')) {
 	  	hideEmptySections();
 	  }
 
