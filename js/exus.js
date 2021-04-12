@@ -132,7 +132,7 @@ function replaceButtons() {
       var txtDiv = document.createElement('div'); //this is our new div to hold link text
       var href = txtLink.href; //our link destination. We store a reference since we're going to destroy the existing txtLink
       if(txtLink.target) {var target = txtLink.target;} //if link opens in new tab, store this attr value
-      target.innerHTML=txtLink.innerHTML; //first copy across contents and attrs for text link to div replacement
+      txtDiv.innerHTML=txtLink.innerHTML; //first copy across contents and attrs for text link to div replacement
       copyAttrs(txtLink,txtDiv);
       txtLink.parentNode.replaceChild(txtDiv,txtLink); //replace text element
       txtDiv.removeAttribute("href"); //remove href and target from new text div
@@ -348,31 +348,65 @@ function runExusScripts() {
 
   //if we're not on the portfolio or ESG page, hide empty collections (since we need these collections for loading data)
 	if (!window.location.href.match('portfolio') && !window.location.href.match('environmental-social-and-governance') && !window.location.href.match('careers')) {
-	  	hideEmptySections();
+	  	try {
+        hideEmptySections();
+      }
+      catch(err) {
+        console.log(err.message)
+      }
 	  }
 
-  //replaceButtons();
+  try {
+    replaceButtons();
+    }
+  catch(err) {
+    console.log(err.message)
+  }
 
-  resizeDiags();
+  try {
+    resizeDiags();
+  }
+  catch(err) {
+    console.log(err.message)
+  }
   
   if(document.querySelector(".js--list-pagination")) {
-    finsweetPagination();
+    try {
+      finsweetPagination();
+    }
+    catch(err) {
+      console.log(err.message)
+    }    
   };
 
   if(document.querySelector(".js--filtered-list--6")) {
-    finweetFilters(6, true, ["insight"]);
+    try {
+      finweetFilters(6, true, ["insight"]);
+    }
+    catch(err) {
+      console.log(err.message)
+    }
   };
 
   if(document.querySelector(".js--filtered-list--24")) {
-    finweetFilters(24, false, ["department", "location"]);
+    try {
+      finweetFilters(24, false, ["department", "location"]);
+    }
+    catch(err) {
+      console.log(err.message)
+    }
   };
 
     //if we're on the ESG page, run the tracker
   if (window.location.href.match('environmental-social-and-governance')) {
-    document.addEventListener('DOMContentLoaded', (event) => {
-      setTimeout(() => { animateCapacityTracker(); }, 2000);
-      
-    })    
+    try {
+      document.addEventListener('DOMContentLoaded', (event) => {
+        setTimeout(() => { animateCapacityTracker(); }, 2000);
+      }) 
+    }
+    catch(err) {
+      console.log(err.message)
+    }
   }
 
   updateCopyrightYear();
