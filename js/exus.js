@@ -132,7 +132,7 @@ function replaceButtons() {
       var txtDiv = document.createElement('div'); //this is our new div to hold link text
       var href = txtLink.href; //our link destination. We store a reference since we're going to destroy the existing txtLink
       if(txtLink.target) {var target = txtLink.target;} //if link opens in new tab, store this attr value
-      target.innerHTML=txtLink.innerHTML; //first copy across contents and attrs for text link to div replacement
+      txtDiv.innerHTML=txtLink.innerHTML; //first copy across contents and attrs for text link to div replacement
       copyAttrs(txtLink,txtDiv);
       txtLink.parentNode.replaceChild(txtDiv,txtLink); //replace text element
       txtDiv.removeAttribute("href"); //remove href and target from new text div
@@ -351,7 +351,7 @@ function runExusScripts() {
 	  	hideEmptySections();
 	  }
 
-  //replaceButtons();
+  replaceButtons();
 
   resizeDiags();
   
