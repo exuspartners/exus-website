@@ -369,6 +369,15 @@ function runExusScripts() {
   catch(err) {
     console.log(err.message)
   }
+
+  if(document.querySelector(".js--list-loadmore")) {
+    try {
+      finsweetLoadMore();
+    }
+    catch(err) {
+      console.log(err.message)
+    }    
+  };
   
   if(document.querySelector(".js--list-pagination")) {
     try {
