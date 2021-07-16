@@ -192,7 +192,7 @@ function finsweetLoadMore() {
     var loadmoreList = new FsLibrary('.js--list-loadmore'); //this class defines the lists this function looks at
     loadmoreList.loadmore({
       button: ".js--button-loadmore", // class of Webflow Pagination button
-      resetIx: true, // adds Webflow interactions to newly loaded item
+      resetIx: false, // adds Webflow interactions to newly loaded item
       loadAll: false, // this loads all elements
       animation: {
         enable: true,
