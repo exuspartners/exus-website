@@ -192,8 +192,8 @@ function finsweetLoadMore() {
     var loadmoreList = new FsLibrary('.js--list-loadmore'); //this class defines the lists this function looks at
     loadmoreList.loadmore({
       button: ".js--button-loadmore", // class of Webflow Pagination button
-      resetIx: true, // adds Webflow interactions to newly loaded item
-      loadAll: true, // this loads all elements
+      resetIx: false, // adds Webflow interactions to newly loaded item
+      loadAll: false, // this loads all elements
       animation: {
         enable: true,
         duration: .3,
@@ -369,6 +369,15 @@ function runExusScripts() {
   catch(err) {
     console.log(err.message)
   }
+
+  if(document.querySelector(".js--list-loadmore")) {
+    try {
+      finsweetLoadMore();
+    }
+    catch(err) {
+      console.log(err.message)
+    }    
+  };
   
   if(document.querySelector(".js--list-pagination")) {
     try {
