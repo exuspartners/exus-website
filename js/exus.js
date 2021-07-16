@@ -193,7 +193,7 @@ function finsweetLoadMore() {
     loadmoreList.loadmore({
       button: ".js--button-loadmore", // class of Webflow Pagination button
       resetIx: true, // adds Webflow interactions to newly loaded item
-      loadAll: true, // this loads all elements
+      loadAll: false, // this loads all elements
       animation: {
         enable: true,
         duration: .3,
